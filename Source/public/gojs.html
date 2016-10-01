@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GoJS Sample</title>
+	<link rel="stylesheet" href="../css/gojs.css">
+</head>
+<body>
+	<section>
+		<form id='submitForm' action="plan" method="post">
+			<div class="center box">
+				<textarea id="textinput"></textarea>
+				<br/>
+				<input id="submitbutton" type="submit" value="Submit"/>
+			</div>
+		</form>
+	</section>
+
+	<section>
+		<div id="myDiagramDiv" class="center box"></div>
+	</section>
+
+	<script src="../js/jquery.js"></script>
+	<script src="../js/debug.js"></script>
+	<script src="../js/go-debug.js"></script>
+	<script src="../js/goutil.js"></script>
+	<script src="../js/parseplan.js"></script>
+
+	<script>		
+		InitDebugData();
+
+		var myDiagram = InitDiagram();
+
+		InitParsePlan(myDiagram);
+	</script>
+</body>
+</html>
