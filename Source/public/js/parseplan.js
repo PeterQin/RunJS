@@ -1,7 +1,8 @@
-var InitParsePlan = function(myDiagram){
+function InitParsePlan(goUtil){
 	var successCallbackFunc = function(data){
 		var jsonNodeArray = JSON.parse(data.plannode);
-		RebuildGraph(myDiagram, jsonNodeArray);
+		goUtil.InitDiagram();
+		goUtil.RebuildGraph(jsonNodeArray);
 	};
 
 	var onSubmit = function(event){
@@ -22,3 +23,13 @@ var InitParsePlan = function(myDiagram){
 
 	$('#submitForm').submit(onSubmit);
 }
+
+
+define(function(require, exports) {
+	var goUtil = require('goutil');
+
+  	exports.InitParsePlan = function(){
+		InitParsePlan(goUtil);
+	};
+
+});

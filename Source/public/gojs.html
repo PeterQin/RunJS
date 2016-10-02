@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>GoJS Sample</title>
-	<link rel="stylesheet" href="../css/gojs.css">
+	<link rel="stylesheet" href="./css/gojs.css">
 </head>
 <body>
 	<section>
@@ -20,18 +20,29 @@
 		<div id="myDiagramDiv" class="center box"></div>
 	</section>
 
-	<script src="../js/jquery.js"></script>
-	<script src="../js/debug.js"></script>
-	<script src="../js/go-debug.js"></script>
-	<script src="../js/goutil.js"></script>
-	<script src="../js/parseplan.js"></script>
+	<script src="./js/jquery.js"></script>
+	<script src="./js/go-debug.js"></script>
+	<script src="./js/sea.js"></script>
 
-	<script>		
-		InitDebugData();
+	<script>
+		function DebugCallback(debug){
+			debug.InitDebugData();
+		};
 
-		var myDiagram = InitDiagram();
+		seajs.use('./js/debug', DebugCallback);
 
-		InitParsePlan(myDiagram);
+		function GoUtilCallback(goUtil){
+			goUtil.InitDiagram();
+		}
+
+		seajs.use('./js/goutil', GoUtilCallback);
+
+		function ParsePlanCallback(parsePlan){
+			parsePlan.InitParsePlan();
+		}
+
+		seajs.use('./js/parseplan', ParsePlanCallback);
+		
 	</script>
 </body>
 </html>

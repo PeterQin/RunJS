@@ -1,4 +1,4 @@
-var InitDebugData = function(){
+function InitDebugData(){
 	var data = [
 				  { key: "1",              name: "Don Meow",   source: "cat1.png" },
 				  { key: "2", parent: "1", name: "Demeter",    source: "cat2.png" },
@@ -8,4 +8,8 @@ var InitDebugData = function(){
 				  { key: "6", parent: "2", name: "Munkustrap", source: "cat6.png" },
 				];
 	$('#textinput').val(JSON.stringify(data));
-}
+};
+
+define(function(require, exports) {	
+  exports.InitDebugData = InitDebugData;
+});
