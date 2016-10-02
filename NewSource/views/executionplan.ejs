@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Execution Plan</title>
+	<link rel='stylesheet' href='/stylesheets/gojs.css' />
+</head>
+<body>
+	<section>
+		<form id='submitForm' action="executionplan" method="post">
+			<div class="center box">
+				<textarea id="textinput"></textarea>
+				<br/>
+				<input id="submitbutton" type="submit" value="Submit"/>
+			</div>
+		</form>
+	</section>
+
+	<section>
+		<div id="myDiagramDiv" class="center box"></div>
+	</section>
+
+	<script src="/libs/jquery/dist/jquery.min.js"></script>
+	<script src="/libs/gojs/release/go-debug.js"></script>
+	<script src="/libs/seajs/dist/sea.js"></script>
+
+	<script>
+		function DebugCallback(debug){
+			debug.InitDebugData();
+		};
+
+		seajs.use('/javascripts/debug', DebugCallback);
+
+		function GoUtilCallback(goUtil){
+			goUtil.InitDiagram();
+		}
+
+		seajs.use('/javascripts/goutil', GoUtilCallback);
+
+		function ParsePlanCallback(parsePlan){
+			parsePlan.InitParsePlan();
+		}
+
+		seajs.use('/javascripts/parseplan', ParsePlanCallback);
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "NewSource",
+  "description": "This is a GoJS example on node",
+  "main": "",
+  "authors": [
+    "Peter Qin <Peter_Qin@live.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "gojs",
+    "node",
+    "express"
+  ],
+  "homepage": "https://github.com/PeterQin/RunJS",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "gojs": "^1.6.17",
+    "seajs": "^3.0.0"
+  }
+}
