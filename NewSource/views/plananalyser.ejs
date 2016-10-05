@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Execution Plan</title>
+	<% include templates/head %>
 	<link rel='stylesheet' href='/stylesheets/gojs.css' />
 </head>
 <body>
+	<% include templates/navigationbar %>
+
 	<section>
-		<form id='submitForm' action="executionplan" method="post">
+		<form id='submitForm' action="plananalyser" method="post">
 			<div class="center box">
 				<textarea id="textinput"></textarea>
 				<br/>
@@ -21,6 +22,8 @@
 	</section>
 
 	<script src="/libs/jquery/dist/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="/libs/gojs/release/go-debug.js"></script>
 	<script src="/libs/seajs/dist/sea.js"></script>
 
@@ -41,7 +44,14 @@
 			parsePlan.InitParsePlan();
 		}
 
-		seajs.use('/javascripts/parseplan', ParsePlanCallback);
+		seajs.use('/javascripts/postparseplan', ParsePlanCallback);
+
+		function NavbarUtilCallback(navbarutil){
+			var navbarid = '<%- navbarid %>';
+			navbarutil.SelectNavBarItem(navbarid);
+		}
+
+		seajs.use('/javascripts/navbarutil', NavbarUtilCallback);
 		
 	</script>
 </body>

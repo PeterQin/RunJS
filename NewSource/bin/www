@@ -23,6 +23,7 @@ var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
+ * set DEBUG=NewSource:* node ./bin/www
  */
 
 server.listen(port);

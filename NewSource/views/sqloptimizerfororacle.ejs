@@ -15,12 +15,8 @@
 				<p>Welcome to <%= title %></p>
 			</header>
 			<section>
-				<div class="jumbotron">
-				  <h1>Better Performance SQL!</h1>
-				  <p>We will find more better performance alternative SQL for you. These alternative SQL can run fast or less I/O.</p>
-				  <p>
-				  	<a class="btn btn-primary btn-lg" href="sqloptimizerfororacle" role="button">Learn more</a>
-				  </p>
+				<div style="height: 300px;">
+				 
 				</div>
 			</section>	
 
@@ -36,5 +32,17 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 
+	<script src="/libs/seajs/dist/sea.js"></script>
+
+	<script>
+
+		function NavbarUtilCallback(navbarutil){
+			var navbarid = '<%- navbarid %>';
+			navbarutil.SelectNavBarItem(navbarid);
+		}
+
+		seajs.use('/javascripts/navbarutil', NavbarUtilCallback);
+		
+	</script>
 </body>
 </html>
