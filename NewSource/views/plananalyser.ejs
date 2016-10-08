@@ -2,24 +2,35 @@
 <html lang="en">
 <head>
 	<% include templates/head %>
-	<link rel='stylesheet' href='/stylesheets/gojs.css' />
+	<link rel='stylesheet' href='/stylesheets/plananalyser.css' />
 </head>
 <body>
-	<% include templates/navigationbar %>
+	<div>
+		<div>
+			<% include templates/navigationbar %>
+		</div>
 
-	<section>
-		<form id='submitForm' action="plananalyser" method="post">
-			<div class="center box">
-				<textarea id="textinput"></textarea>
-				<br/>
-				<input id="submitbutton" type="submit" value="Submit"/>
+		<div>
+			<div>
+				<div class="row">
+					<form id='submitForm' action="plananalyser" method="post">
+						<div class="center box">
+							<textarea id="textinput"></textarea>
+							<br/>
+							<input id="submitbutton" type="submit" value="Submit"/>
+						</div>
+					</form>
+				</div>
+
+				<div class="row">
+					<div id="myDiagramDiv" class="center box"></div>
+				</div>
 			</div>
-		</form>
-	</section>
 
-	<section>
-		<div id="myDiagramDiv" class="center box"></div>
-	</section>
+			
+		</div>
+		
+	</div>
 
 	<script src="/libs/jquery/dist/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
