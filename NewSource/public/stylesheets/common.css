@@ -1,4 +1,68 @@
 .navbar-custom {
     border-radius:0;
     background-color: #333;
+    margin-bottom: 0px;
+}
+
+.navbar-header-custom{
+}
+
+.navbar-content-custom{
+	font-size: 15px;
+}
+
+.navbar-brand-custom{
+    padding-top: 10px;
+}
+
+.navbar-brand-header-custom{
+	font-weight: bold;
+    font-size: 20px;
+    color: #eeeeee;
+    margin-left: 3px;
+}
+
+.pptimage{
+	margin: 0 auto;
+}
+
+.footer{
+	height: 100px;
+	background-color: gray;
+	color: white;
+	text-align: center;
+	padding: 30px;
+}
+
+.jumbotron-custom{
+	text-align: center;
+	background-color: #5eadb7;
+}
+.products-item-list{
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+
+.products-item{
+	height: 200px;
+	padding: 20px;
+	margin: 5px;
+	color: white;
+}
+
+.products-item-oracle{
+	background-color: #dc6e02;
+}
+
+.products-item-sqlserver{
+	background-color: #048696;
+}
+
+.products-item-sybase{
+	background-color: #b3305c;
+}
+
+.products-item-db2{
+	background-color: #bf463d;
 }
