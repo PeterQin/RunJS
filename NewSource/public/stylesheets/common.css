@@ -32,15 +32,21 @@
 	color: white;
 	text-align: center;
 	padding: 30px;
+	margin-top: 20px;
 }
 
 .jumbotron-custom{
-	text-align: center;
-	background-color: #5eadb7;
+	/*color: white;*/
+	text-align: center;	
+	/*background-size: contain;
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	background-position:center;
+	background-image: url(/images/banner.jpg);*/
 }
 .products-item-list{
-	margin-right: 10px;
-	margin-left: 10px;
+	margin-right: 0px;
+	margin-left: 0px;
 	margin-bottom: 20px;
 }
 
@@ -49,6 +55,10 @@
 	padding: 20px;
 	margin: 5px;
 	color: white;
+}
+
+.products-item-viewdetail{
+	margin-top: 25px;
 }
 
 .products-item-oracle{
@@ -65,4 +75,9 @@
 
 .products-item-db2{
 	background-color: #bf463d;
+}
+
+.planproductdiv{
+	margin-left: 20px;
+	margin-right: 20px;
 }
