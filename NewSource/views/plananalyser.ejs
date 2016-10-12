@@ -10,52 +10,48 @@
 			<% include templates/navigationbar %>
 		</div>
 
-		<div>
-			<div>
-				<div class="row">
-					<form id='submitForm' action="plananalyser" method="post">
-						<div class="center box">
-							<textarea id="textinput"></textarea>
-							<br/>
-							<input id="submitbutton" type="submit" value="Submit"/>
-						</div>
-					</form>
-				</div>
+		<section>
+			<div class="jumbotron jumbotron-plananalyser">
+				<h1>Analysis Plan Anywhere</h1>
+				<p>From desktop to web.</p>
+			</div>
+		</section>	
 
-				<div class="row">
-					<div id="myDiagramDiv" class="center box"></div>
+		<section>
+			<div id="products-plananalyser" class="products-plananalyser">
+				<div class="row featurette">
+					<div class="col-md-4">
+						<h2 class="featurette-heading">Plan Analysis</h2>
+						<p>Find more problem from your execution plan.</p>
+						<h3>More warning</h3>
+						<p>Find more problem from your execution plan.</p>
+						<h3>More Beautiful</h3>
+						<p>Find more problem from your execution plan.</p>
+						<p><a class="btn btn-default" href="sqloptimizertrails" role="button">Try Online »</a></p>
+					</div>
+					<div class="col-md-8">
+						<img class="featurette-image img-responsive" alt="Plan Analyser" src="/images/plan4.png">
+					</div>
 				</div>
 			</div>
-
-			
-		</div>
+		</section>
 		
-	</div>
 
+		</div>
+
+		<div>
+			<% include templates/footer %>
+		</div>
+
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="/libs/jquery/dist/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="/libs/gojs/release/go-debug.js"></script>
+
 	<script src="/libs/seajs/dist/sea.js"></script>
 
 	<script>
-		function DebugCallback(debug){
-			debug.InitDebugData();
-		};
-
-		seajs.use('/javascripts/debug', DebugCallback);
-
-		function GoUtilCallback(goUtil){
-			goUtil.InitDiagram();
-		}
-
-		seajs.use('/javascripts/goutil', GoUtilCallback);
-
-		function ParsePlanCallback(parsePlan){
-			parsePlan.InitParsePlan();
-		}
-
-		seajs.use('/javascripts/postparseplan', ParsePlanCallback);
 
 		function NavbarUtilCallback(navbarutil){
 			var navbarid = '<%- navbarid %>';
@@ -63,7 +59,7 @@
 		}
 
 		seajs.use('/javascripts/navbarutil', NavbarUtilCallback);
-		
+
 	</script>
 </body>
 </html>

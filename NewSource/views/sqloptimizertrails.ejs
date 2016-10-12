@@ -1,1 +1,103 @@
-<% include sqloptimizerfororacle %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include templates/head %>
+	<link rel='stylesheet' href='/stylesheets/plananalyser.css' />
+</head>
+<body>
+	<div>
+		<div>
+			<% include templates/navigationbar %>
+		</div>
+
+		<section>
+			<div class="jumbotron jumbotron-trails">
+			  <h1>Try Plan Analyser Online</h1>
+			  <p>From desktop to web.</p>
+			</div>
+		</section>	
+		<div>
+			<div class="plancontrol">
+				<div class="row">
+				  <div class="col-md-1"></div>
+				  <div class="col-md-10">
+  						<div class="panel panel-info">
+  						  <div class="panel-heading">
+  						    <h3 class="panel-title">Plan XML</h3>
+  						  </div>
+  						  <div class="panel-body">
+  						    <form id='submitForm' action="plananalyser" method="post">
+  	    						<div>
+  	    							<textarea id="textinput"></textarea>
+  	    						</div>
+  	    						<div>
+  	    							<input id="submitbutton" type="submit" value="Submit"/>
+  	    						</div>
+  	    					</form>
+  						  </div>
+  						</div>
+				  </div>
+				  <div class="col-md-1"></div>
+				</div>
+
+				<div class="row">
+				  <div class="col-md-1"></div>
+				  <div class="col-md-10">
+				  	<div class="panel panel-success">
+				  	  <div class="panel-heading">
+				  	    <h3 class="panel-title">Execution Plan Diagram</h3>
+				  	  </div>
+				  	  <div class="panel-body">
+				  	    <div id="myDiagramDiv"></div>
+				  	  </div>
+				  	</div>
+				  </div>
+				  <div class="col-md-1"></div>
+				</div>
+
+			</div>
+
+			
+		</div>
+		
+		<div>
+			<% include templates/footer %>
+		</div>
+
+	</div>
+
+	<script src="/libs/jquery/dist/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="/libs/gojs/release/go-debug.js"></script>
+	<script src="/libs/seajs/dist/sea.js"></script>
+
+	<script>
+		function DebugCallback(debug){
+			debug.InitDebugData();
+		};
+
+		seajs.use('/javascripts/debug', DebugCallback);
+
+		function GoUtilCallback(goUtil){
+			goUtil.InitDiagram();
+		}
+
+		seajs.use('/javascripts/goutil', GoUtilCallback);
+
+		function ParsePlanCallback(parsePlan){
+			parsePlan.InitParsePlan();
+		}
+
+		seajs.use('/javascripts/postparseplan', ParsePlanCallback);
+
+		function NavbarUtilCallback(navbarutil){
+			var navbarid = '<%- navbarid %>';
+			navbarutil.SelectNavBarItem(navbarid);
+		}
+
+		seajs.use('/javascripts/navbarutil', NavbarUtilCallback);
+		
+	</script>
+</body>
+</html>
