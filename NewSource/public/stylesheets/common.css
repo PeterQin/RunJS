@@ -37,7 +37,8 @@
 
 .jumbotron-custom{
 	/*color: white;*/
-	text-align: center;	
+	text-align: center;
+	background-color: #a7e2c6;	
 	/*background-size: contain;
 	background-repeat: no-repeat;
 	background-attachment:fixed;
@@ -77,7 +78,8 @@
 	background-color: #bf463d;
 }
 
-.planproductdiv{
+.products-plananalyser{
+	margin-top: 40px;
+	margin-bottom: 30px;
 	margin-left: 20px;
-	margin-right: 20px;
 }

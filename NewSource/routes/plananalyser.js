@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
   	'plananalyser', 
   	{
   		title: 'Plan Analyser',
-  		navbarid: 'navbar_plananalyser',
+  		navbarid: 'navbar_products',
   	});
 });
 
