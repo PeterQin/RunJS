@@ -28,26 +28,29 @@
 
 .footer{
 	height: 100px;
-	background-color: gray;
-	color: white;
+	background-color: lightgray;
+	color: black;
 	text-align: center;
 	padding: 30px;
-	margin-top: 20px;
+	margin-top: 0px;
 }
 
 .jumbotron-custom{
 	/*color: white;*/
-	text-align: center;
-	background-color: #a7e2c6;	
+	text-align: center;	
 	/*background-size: contain;
 	background-repeat: no-repeat;
 	background-position:center;
 	background-image: url(/images/banner2.jpg);*/
 }
 
+.container-custom{
+	margin-right: 20px;
+	margin-left: 20px;
+	width: inherit;
+}
+
 .products-item-list{
-	margin-right: 0px;
-	margin-left: 0px;
 	margin-bottom: 20px;
 }
 
@@ -107,4 +110,11 @@
 .jumbotron-trails{
 	text-align: center;
 	margin-bottom: 0px;
+}
+
+.plananalyser-jumbotron-div{
+	background-color: white;
+	padding: 30px;
+	width: 800px;
+    opacity: 0.8;
 }

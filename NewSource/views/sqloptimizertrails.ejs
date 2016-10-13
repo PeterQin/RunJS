@@ -10,54 +10,25 @@
 			<% include templates/navigationbar %>
 		</div>
 
-		<section>
-			<div class="jumbotron jumbotron-trails">
-			  <h1>Try Plan Analyser Online</h1>
-			  <p>From desktop to web.</p>
+		<div class="plancontrol">
+			<section class="plan-header">
+				<h1 >Plan Analyser Online</h1>
+			</section>	
+			<div>
+				<form id='submitForm' action="plananalyser" method="post">
+					<div>
+						<div class="button-group-custom">
+						  <!-- <button type="button" class="btn btn-default">New Plan XML</button> -->
+						  <button id="submitbutton" type="submit" class="btn btn-primary">Parse Plan</button>
+						  <button id="clearbutton" type="button" class="btn btn-primary">Clear</button>
+						</div>
+						<div>
+							<textarea id="textinput" class="planeditor"></textarea>
+						</div>
+						<div id="myDiagramDiv"></div>
+					</div>
+				</form>
 			</div>
-		</section>	
-		<div>
-			<div class="plancontrol">
-				<div class="row">
-				  <div class="col-md-1"></div>
-				  <div class="col-md-10">
-  						<div class="panel panel-info">
-  						  <div class="panel-heading">
-  						    <h3 class="panel-title">Plan XML</h3>
-  						  </div>
-  						  <div class="panel-body">
-  						    <form id='submitForm' action="plananalyser" method="post">
-  	    						<div>
-  	    							<textarea id="textinput"></textarea>
-  	    						</div>
-  	    						<div>
-  	    							<input id="submitbutton" type="submit" value="Submit"/>
-  	    						</div>
-  	    					</form>
-  						  </div>
-  						</div>
-				  </div>
-				  <div class="col-md-1"></div>
-				</div>
-
-				<div class="row">
-				  <div class="col-md-1"></div>
-				  <div class="col-md-10">
-				  	<div class="panel panel-success">
-				  	  <div class="panel-heading">
-				  	    <h3 class="panel-title">Execution Plan Diagram</h3>
-				  	  </div>
-				  	  <div class="panel-body">
-				  	    <div id="myDiagramDiv"></div>
-				  	  </div>
-				  	</div>
-				  </div>
-				  <div class="col-md-1"></div>
-				</div>
-
-			</div>
-
-			
 		</div>
 		
 		<div>
