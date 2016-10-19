@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<% include templates/head %>
+	<link rel='stylesheet' href='/stylesheets/plananalyser.css' />
+</head>
+<body>
+	<div>
+		<div>
+			<% include templates/navigationbar %>
+		</div>
+
+		<section>
+			<div class="jumbotron jumbotron-plananalyser">
+				<div class="plananalyser-jumbotron-div">
+					<h1>Analyse Plan Anywhere</h1>
+					<p>From desktop to web.</p>
+					<p><a class="btn btn-lg btn-success" href="sqloptimizertrails" role="button">Try It Online »</a></p>
+				</div>
+			</div>
+		</section>	
+
+		<section>
+			<div id="products-plananalyser" class="container container-custom products-plananalyser">
+				<div class="row featurette">
+					<div class="col-md-5">
+						<h2 class="featurette-heading">Plan Analysis</h2>
+						<p>An execution plan describes what’s going on behind the scenes when SQL Server executes a query.</p>
+						<p>Find more problem from your execution plan. So that you can optimize the SQL</p>
+						<h2 class="featurette-heading">More warning</h2>
+						<p>Indicate the real operator cause the problem.</p>
+						<h2 class="featurette-heading">Beautiful Diagram</h2>
+						<p>Easy to use, more beautiful.</p>
+					</div>
+					<div class="col-md-7">
+						<img class="featurette-image img-responsive" alt="Plan Analyser" src="/images/mac.png">
+					</div>
+				</div>
+			</div>
+		</section>
+		
+
+		</div>
+
+		<div>
+			<% include templates/footer %>
+		</div>
+
+	</div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="/libs/jquery/dist/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="/libs/seajs/dist/sea.js"></script>
+
+	<script>
+
+		function NavbarUtilCallback(navbarutil){
+			var navbarid = '<%- navbarid %>';
+			navbarutil.SelectNavBarItem(navbarid);
+		}
+
+		seajs.use('/javascripts/navbarutil', NavbarUtilCallback);
+
+	</script>
+</body>
+</html>

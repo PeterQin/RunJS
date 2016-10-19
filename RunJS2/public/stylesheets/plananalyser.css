@@ -1,0 +1,36 @@
+
+#myDiagramDiv{
+	background: #4a4a4a;
+    height: 400px; 
+}
+
+
+#textinput{	
+	width: 100%;
+    height: 300px; 
+    background-color: #e8e8e8; 
+}
+
+.plancontrol{
+	background-color: #1d1d1d;
+	padding: 20px;
+}
+
+.trails-container{
+	margin-right: 0px;
+	margin-left: 0px;
+	width: inherit;
+}
+
+.planeditor{
+	resize:none
+}
+
+.plan-header{
+	margin-bottom: 20px;
+	color: #8c8c8c;
+}
+
+.button-group-custom{
+	margin-bottom: 10px;
+}
