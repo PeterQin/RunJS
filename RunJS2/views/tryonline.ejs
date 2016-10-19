@@ -15,7 +15,7 @@
 				<h1 >Plan Analyser Online</h1>
 			</section>	
 			<div>
-				<form id='submitForm' action="plananalyser" method="post">
+				<form id='submitForm' action="tryonline" method="post">
 					<div>
 						<div class="button-group-custom">
 						  <!-- <button type="button" class="btn btn-default">New Plan XML</button> -->
@@ -62,12 +62,7 @@
 
 		seajs.use('/javascripts/postparseplan', ParsePlanCallback);
 
-		function NavbarUtilCallback(navbarutil){
-			var navbarid = '<%- navbarid %>';
-			navbarutil.SelectNavBarItem(navbarid);
-		}
-
-		seajs.use('/javascripts/navbarutil', NavbarUtilCallback);
+		
 		
 	</script>
 </body>

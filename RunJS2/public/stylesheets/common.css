@@ -22,10 +22,6 @@
     margin-left: 3px;
 }
 
-.pptimage{
-	margin: 0 auto;
-}
-
 .footer{
 	height: 100px;
 	background-color: lightgray;
@@ -35,86 +31,12 @@
 	margin-top: 0px;
 }
 
-.jumbotron-custom{
-	/*color: white;*/
-	text-align: center;	
-	/*background-size: contain;
-	background-repeat: no-repeat;
-	background-position:center;
-	background-image: url(/images/banner2.jpg);*/
-}
-
 .container-custom{
 	margin-right: 20px;
 	margin-left: 20px;
 	width: inherit;
 }
 
-.products-item-list{
-	margin-bottom: 20px;
-}
-
-.products-item{
-	height: 200px;
-	padding: 20px;
-	margin: 5px;
-	color: white;
-}
-
-.products-item-viewdetail{
-	margin-top: 25px;
-}
-
-.products-item-oracle{
-	background-color: #dc6e02;
-}
-
-.products-item-sqlserver{
-	background-color: #048696;
-}
-
-.products-item-sybase{
-	background-color: #b3305c;
-}
-
-.products-item-db2{
-	background-color: #bf463d;
-}
-
-.products-plananalyser{
-	margin-top: 40px;
-	margin-bottom: 30px;
-	margin-left: 20px;
-}
-
-.plan-banner-div{
-	position:absolute;
-	left:0px;
-	top:0px;
-	z-index:100;
-	background:#F00;
-	width:200px;
-	height:100px
-}
-
-.jumbotron-plananalyser{
-	color: #0a920f;
-	height: 400px;
-	background-color: white;	
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-image: url(/images/banner2.jpg);
-	padding-left: 50px;
-}
-
-.jumbotron-trails{
-	text-align: center;
-	margin-bottom: 0px;
-}
-
-.plananalyser-jumbotron-div{
-	background-color: white;
-	padding: 30px;
-	width: 800px;
-    opacity: 0.8;
+.container-top{
+	margin-top: 50px;
 }

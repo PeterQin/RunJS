@@ -4,10 +4,9 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render(
-  	'sqloptimizerfororacle', 
+  	'dashboard', 
   	{
-  		title: 'SQL Optimizer for Oracle',
-  		navbarid: 'navbar_products',
+  		title: 'Dashboard',
   	});
 });
 

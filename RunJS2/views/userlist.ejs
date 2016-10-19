@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include templates/head %>
+</head>
+<body>
+	<div>
+		<div>
+			<% include templates/navigationbar %>
+		</div>
+		 
+		<div class="container container-top">
+			<section>
+				<div class="panel panel-default">
+  					<!-- Default panel contents -->
+  					<div class="panel-heading"><%= title %></div>
+					 	<table class="table table-hover">
+			 	               <thead>
+			 	               <tr>
+			 	                   <th>ID</th>
+			 	                   <th>UserName</th>
+			 	                   <th>Password</th>
+			 	                   <th>Alias</th>
+			 	                   <th>Created Time</th>
+			 	                   <th>Updated Time</th>
+			 	               </tr>
+			 	               </thead>
+			 	               <tbody>
+			 	               <% userlist.forEach(function(data){ %>
+			 	                   <tr>
+			 	                       <td><%= data.id %></td>
+			 	                       <td><%= data.user %></td>
+			 	                       <td><%= data.password %></td>
+			 	                       <td><%= data.alias %></td>
+			 	                       <td><%= data.createdTime %></td>
+			 	                       <td><%= data.updatedTime %></td>
+			 	                   </tr>
+			 	               <% }) %>  
+			 	               </tbody>
+		 	           </table>
+		 	        <div>
+				</div>
+			</section>	
+
+		</div>
+		
+		<div>
+			<% include templates/footer %>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="/libs/jquery/dist/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="/libs/seajs/dist/sea.js"></script>
+
+
+</body>
+</html>

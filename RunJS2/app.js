@@ -6,15 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var sqloptimizerfororacle = require('./routes/sqloptimizerfororacle');
-var sqloptimizerforsqlserver = require('./routes/sqloptimizerforsqlserver');
-var sqloptimizerforsybase = require('./routes/sqloptimizerforsybase');
-var sqloptimizerfordb2 = require('./routes/sqloptimizerfordb2');
-var plananalyser = require('./routes/plananalyser');
-var sqloptimizertrails = require('./routes/sqloptimizertrails');
-var buysqloptimizer = require('./routes/buysqloptimizer');
-var loginsqloptimizer = require('./routes/loginsqloptimizer');
-var sqloptimizersupport = require('./routes/sqloptimizersupport');
+var dashboard = require('./routes/dashboard');
+var tryOnline = require('./routes/tryonline');
+var login = require('./routes/login');
+var userList = require('./routes/userlist');
 
 
 var app = express();
@@ -32,15 +27,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/sqloptimizerfororacle', sqloptimizerfororacle);
-app.use('/sqloptimizerforsqlserver', sqloptimizerforsqlserver);
-app.use('/sqloptimizerforsybase', sqloptimizerforsybase);
-app.use('/sqloptimizerfordb2', sqloptimizerfordb2);
-app.use('/plananalyser', plananalyser);
-app.use('/sqloptimizertrails', sqloptimizertrails);
-app.use('/buysqloptimizer', buysqloptimizer);
-app.use('/loginsqloptimizer', loginsqloptimizer);
-app.use('/sqloptimizersupport', sqloptimizersupport);
+app.use('/dashboard', dashboard);
+app.use('/tryonline', tryOnline);
+app.use('/login', login);
+app.use('/admin/userList', userList);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

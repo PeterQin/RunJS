@@ -1,15 +1,10 @@
-var parsePlan = require('../business/parseplan'); 
 var express = require('express');
 var router = express.Router();
+var parsePlan = require('../business/parseplan'); 
 
-/* GET plan analyser page. */
+/* GET try online page. */
 router.get('/', function(req, res, next) {
-  res.render(
-  	'plananalyser', 
-  	{
-  		title: 'Plan Analyser',
-  		navbarid: 'navbar_products',
-  	});
+  res.render('tryonline', { title: 'Try Online'});
 });
 
 router.post('/', function(req, res, next) {
