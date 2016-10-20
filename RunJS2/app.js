@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var dashboard = require('./routes/dashboard');
 var tryOnline = require('./routes/tryonline');
 var login = require('./routes/login');
+var register= require('./routes/register');
 var userList = require('./routes/userlist');
 
 
@@ -30,6 +31,7 @@ app.use('/', routes);
 app.use('/dashboard', dashboard);
 app.use('/tryonline', tryOnline);
 app.use('/login', login);
+app.use('/register', register);
 app.use('/admin/userList', userList);
 
 // catch 404 and forward to error handler

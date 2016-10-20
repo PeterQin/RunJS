@@ -1,18 +1,28 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var user = require('../models/userModel');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var userlist = [
-        { id: '1', user: 'Bloody', password:'sss', alias:'', createdTime:'2016-01-01', updatedTime:'2016-01-01' },
-        { id: '2', user: 'Bloody', password:'sss', alias:'', createdTime:'2016-01-01', updatedTime:'2016-01-01' },
-    ];
-  res.render('userlist', 
-  	{ 
-  		title: 'User Management',
-  		userlist: userlist, 
-  	}
-  	);
+
+  user.fetch(function(err, users){
+    if (err) {
+      console.log(err);
+    };
+
+    res.render('userlist', 
+      { 
+        title: 'User Management',
+        userlist: users, 
+      }
+    );
+
+  })
+
+	
+    
 });
 
 module.exports = router;
