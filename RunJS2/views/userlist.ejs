@@ -13,27 +13,29 @@
 			<section>
 				<div class="panel panel-default">
   					<!-- Default panel contents -->
-  					<div class="panel-heading"><%= title %></div>
-					 	<table class="table table-hover">
+  					<div class="panel-heading">
+  						<h3><%= title %></h3>
+  					</div>
+					 	<table class="table table-hover table-bordered">
 			 	               <thead>
 			 	               <tr>
 			 	                   <th>ID</th>
+			 	                   <th>Email</th>
 			 	                   <th>UserName</th>
 			 	                   <th>Password</th>
-			 	                   <th>Alias</th>
 			 	                   <th>Created Time</th>
 			 	                   <th>Updated Time</th>
 			 	               </tr>
 			 	               </thead>
 			 	               <tbody>
 			 	               <% userlist.forEach(function(data){ %>
-			 	                   <tr>
-			 	                       <td><%= data.id %></td>
-			 	                       <td><%= data.user %></td>
+			 	                   <tr class="user-tr-<%= data._id %>">
+			 	                       <td><%= data._id %></td>
+			 	                       <td><%= data.email %></td>
+			 	                       <td><%= data.userName %></td>
 			 	                       <td><%= data.password %></td>
-			 	                       <td><%= data.alias %></td>
-			 	                       <td><%= data.createdTime %></td>
-			 	                       <td><%= data.updatedTime %></td>
+			 	                       <td><%= data.meta.createdTime %></td>
+			 	                       <td><%= data.meta.updatedTime %></td>
 			 	                   </tr>
 			 	               <% }) %>  
 			 	               </tbody>
@@ -56,6 +58,6 @@
 
 	<script src="/libs/seajs/dist/sea.js"></script>
 
-
+	<% include templates/body-end %>
 </body>
 </html>

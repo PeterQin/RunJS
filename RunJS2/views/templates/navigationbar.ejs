@@ -24,48 +24,33 @@
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
-				<li><a href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->
 </nav>
 
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Please register</h4>
-      </div>
-      <div class="modal-body">
-
-        <form action="register" method="post" class="form-signin" role="form">
-          <input type="email" class="form-control" placeholder="Email address" required autofocus/>
-          <input type="password" class="form-control" placeholder="Password" required/>          
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>
-        </form>
-
-      </div>
-      <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Register</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div> -->
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header modal-custom-alignment">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title">Please sign in</h4>
+        <h3 class="modal-title">Please Sign In</h3>
       </div>
       <div class="modal-body">
 
         <form class="form-signin" role="form">
-          <input type="email" class="form-control" placeholder="Email address" required autofocus/>
-          <input type="password" class="form-control" placeholder="Password" required/>
+          <div class="input-group">
+            <div id="input-group-email" class="input-group-addon">
+              <span class="glyphicon glyphicon-user"/>
+            </div>
+            <input type="email" class="form-control" placeholder="Email address" required autofocus/>
+          </div>
+          <div class="input-group">
+            <div id="input-group-password" class="input-group-addon">
+              <span class="glyphicon glyphicon-lock"/>
+            </div>
+            <input type="password" class="form-control" placeholder="Password" required/>
+          </div>
           <div class="checkbox">
             <label>
               <input type="checkbox" value="remember-me"> Remember me</input>
@@ -73,7 +58,15 @@
           </div>
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         </form>
-
+        
+        <div class="modal-footer modal-custom-alignment">
+          <div>
+            <a href="register">Register Now</a>
+            <span class="register-split">|</span>
+            <a href="resetpassword">Forget Password</a>
+          </div>
+         
+        </div>
       </div>
       <!-- <div class="modal-footer">
         <button type="button" class="btn btn-primary">Register</button>

@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
-	id: String,
+	email: {
+		type: String,
+		unique:true
+	},
 	userName: String,
 	password: String,
-	alias: String,
 	meta: {
 		createdTime: {
 			type: Date,
@@ -30,11 +32,14 @@ userSchema.pre('save', function(next){
 });
 
 userSchema.statics = {
-	fetch: function(callback){
-		return this.find({}).sort('meta.updatedTime').exec(callback);
+	fetch: function(aCallback){
+		return this.find({}).sort('meta.updatedTime').exec(aCallback);
 	},
-	findById: function(id, callback){
-		return this.findOne({_id: id}).exec(callback);
+	findById: function(aID, aCallback){
+		return this.findOne({_id: aID}).exec(aCallback);
+	},
+	findByEmail: function(aEmail, aCallback){
+		return this.findOne({email: aEmail}).exec(aCallback);
 	},
 };
 

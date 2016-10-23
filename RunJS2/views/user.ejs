@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<% include templates/head %>
+
+	<!-- Custom styles for this template -->
+	<link rel='stylesheet' href='/stylesheets/register.css' />
+</head>
+<body>
+	<div>
+		<div>
+			<% include templates/navigationbar %>
+		</div>
+		 
+		<div class="container container-custom">
+			
+			<div class="panel panel-default panel-custom">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">User Profile</h3>
+			  </div>
+			  <div class="panel-body">
+			  	<!-- it should be PUT -->
+			  	<form role="form" action="/user?id=<%= user._id %>" method="post">
+					
+					<div class="row row-custom">
+					  <div class="col-md-3">
+					  	<label class="lable-custom" for="email">Email:</label>					  	
+					  </div>
+					  <div class="col-md-9">
+					  	<input id="email" name="user[email]" type="email" value="<%= user.email %>" class="form-control" required autofocus/>
+					  </div>
+					</div>
+
+					<div class="row row-custom">
+					  <div class="col-md-3">
+					  	<label class="lable-custom" for="userName">Your Name:</label>					  	
+					  </div>
+					  <div class="col-md-9">
+					  	<input id="userName" name="user[userName]" value="<%= user.userName %>" type="text" class="form-control" autofocus/>
+					  </div>
+					</div>
+
+			  	  	<div class="row row-custom">
+			  	  		<div class="col-md-3">							
+			  	  		</div>
+			  	  		<div class="col-md-9">
+			  	  			<button class="btn btn-primary" type="submit">Save</button>
+			  	  		</div>
+			  	  	</div>
+			  	  
+			  	</form>
+			  </div>
+			</div>
+
+	    </div> <!-- /container -->
+		
+		<div>
+			<% include templates/footer %>
+		</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="/libs/jquery/dist/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+	<script src="/libs/seajs/dist/sea.js"></script>
+
+	<% include templates/body-end %>
+</body>
+</html>

@@ -1,3 +1,7 @@
+body {
+  background-color: #eee;
+}
+
 .navbar-custom {
     border-radius:0;
     background-color: #333;
@@ -22,13 +26,10 @@
     margin-left: 3px;
 }
 
-.footer{
-	height: 100px;
-	background-color: lightgray;
+.footer-custom{
 	color: black;
 	text-align: center;
-	padding: 30px;
-	margin-top: 0px;
+	padding: 20px;
 }
 
 .container-custom{
@@ -39,4 +40,8 @@
 
 .container-top{
 	margin-top: 50px;
+}
+
+.modal-header-custom{
+
 }
