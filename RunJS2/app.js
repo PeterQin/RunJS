@@ -13,7 +13,9 @@ var login = require('./routes/login');
 var register= require('./routes/register');
 var userList = require('./routes/userlist');
 var user = require('./routes/user');
+var privacy = require('./routes/privacy');
 
+mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/runjs2');
 
 var app = express();
@@ -36,7 +38,8 @@ app.use('/tryonline', tryOnline);
 app.use('/login', login);
 app.use('/admin/userList', userList);
 app.use('/user/register', register);
-app.use('/user', user);
+app.use('/user', user)
+app.use('/privacy', privacy);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
