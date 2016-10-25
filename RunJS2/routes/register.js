@@ -16,13 +16,13 @@ router.post('/', function(req, res, next) {
 	var password = requestUser.password;
 
 	if (!email) {
-		res.send({success:false, 
+		return res.send({success:false, 
 			element:'email',
 			message:'email cannot be empty'});
 	};
 
 	if (!password) {
-		res.send({success:false, 
+		return res.send({success:false, 
 			element:'password',
 			message:'password cannot be empty'});
 	};
@@ -61,11 +61,7 @@ router.post('/', function(req, res, next) {
 			saveUser();
 		}
 
-	});
-
-	
-
-  
+	});  
 });
 
 module.exports = router;

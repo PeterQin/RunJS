@@ -38,22 +38,22 @@
       </div>
       <div class="modal-body">
 
-        <form class="form-signin" role="form">
+        <form class="form-signin" role="form" action="/user/login" method="post">
           <div class="input-group">
             <div id="input-group-email" class="input-group-addon">
               <span class="glyphicon glyphicon-user"/>
             </div>
-            <input type="email" class="form-control" placeholder="Email address" required autofocus/>
+            <input id="email" name="user[email]" type="email" class="form-control" placeholder="Email address" required autofocus/>
           </div>
           <div class="input-group">
             <div id="input-group-password" class="input-group-addon">
               <span class="glyphicon glyphicon-lock"/>
             </div>
-            <input type="password" class="form-control" placeholder="Password" required/>
+            <input id="password" name="user[password]" type="password" class="form-control" placeholder="Password" required/>
           </div>
           <div class="checkbox">
             <label>
-              <input type="checkbox" value="remember-me"> Remember me</input>
+              <input id="remember" name="user[remember]" type="checkbox" value="remember-me"> Remember me</input>
             </label>
           </div>
           <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>

@@ -35,9 +35,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
 app.use('/dashboard', dashboard);
 app.use('/tryonline', tryOnline);
-app.use('/login', login);
 app.use('/admin/userList', userList);
 app.use('/user/register', register);
+app.use('/user/login', login);
 app.use('/user', user)
 app.use('/privacy', privacy);
 
