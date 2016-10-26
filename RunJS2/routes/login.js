@@ -13,18 +13,17 @@ router.post('/', function(req, res, next) {
 	var password = requestUser.password;
 
 	if (!email) {
-		return res.send({success:false, 
+		return res.send({fail: true, 
 			element:'email',
 			message:'email cannot be empty'});
 	};
 
 	if (!password) {
-		return res.send({success:false, 
+		return res.send({fail: true, 
 			element:'password',
 			message:'password cannot be empty'});
 	};
-	console.log('email: ' + email);
-	console.log('password: ' + password);
+
 	UserModel.findByEmail(email, function(err, aUser){
 		if (err) {
 		  console.log(err);
@@ -38,12 +37,13 @@ router.post('/', function(req, res, next) {
 				  return;
 				};
 				if (aIsMatched) {
-					res.redirect('/user?id='+aUser._id);
+					req.session.user = aUser;
+					res.redirect(req.session.lastPage);
 				}
 				else{
 					return res.send(
 					{
-						success: false, 
+						fail: true, 
 						message: 'Password is incorrect'
 					});
 				}
@@ -52,7 +52,7 @@ router.post('/', function(req, res, next) {
 		else{
 			return res.send(
 			{
-				success: false, 
+				fail: true, 
 				message: 'Email ' + email + ' is not register'
 			});
 		}

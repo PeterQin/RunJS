@@ -4,13 +4,14 @@ var UserModel = require('../models/usermodel');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	var id = req.query.id;
+	var user = req.session.user;
+	var id = user._id;
 
 	UserModel.findById(id, function(err, aUser){
 		if (err) {
 			console.log(err);
 		};
-		console.log(aUser);
+		
 		res.render('user', 
 		{ 
 			title: 'My Settings',

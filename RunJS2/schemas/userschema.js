@@ -8,10 +8,7 @@ var userSchema = new mongoose.Schema({
 		unique:true,
 		lowercase: true
 	},
-	userName: {
-		type: String,
-		lowercase: true
-	},
+	userName: String,
 	password: String,
 	meta: {
 		createdTime: {
