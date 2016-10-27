@@ -11,7 +11,7 @@
 			<a class="navbar-brand navbar-brand-custom" href="/">
 				<div>
 					<img alt="SQL Optimizer" src="/images/logo.png" width="32" height="32">
-					<span class="navbar-brand-header-custom">Plan Analyser</span>
+					<span class="navbar-brand-header-custom">Plan Analyser Live</span>
 				</div>
 			</a>
 		</div>
@@ -36,13 +36,13 @@
           </a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="/user">Profile</a></li>
-            <li><a href="/user/logout">Logout</a></li>
+            <li><a href="/user/signout">Sign Out</a></li>
           </ul>
         </li>
       </ul>
       <% } else{ %>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#signinModal">Sign In</a></li>
       </ul>
       <% } %>
 			
@@ -50,16 +50,16 @@
 	</div><!-- /.container-fluid -->
 </nav>
 
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="signinModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header modal-custom-alignment">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h3 class="modal-title">Please Login</h3>
+        <h3 class="modal-title">Sign In to Plan Analyser</h3>
       </div>
       <div class="modal-body">
 
-        <form class="form-signin" role="form" action="/user/login" method="post">
+        <form class="form-signin" role="form" action="/user/signin" method="post">
           <div class="input-group">
             <div id="input-group-email" class="input-group-addon">
               <span class="glyphicon glyphicon-user"/>
@@ -74,15 +74,15 @@
           </div>
           <div class="checkbox">
             <label>
-              <input id="remember" name="user[remember]" type="checkbox" value="remember-me"> Remember me</input>
+              <input id="rememberMe" name="rememberMe" type="checkbox" value="rememberMe">Remember me</input>
             </label>
           </div>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
         </form>
         
         <div class="modal-footer modal-custom-alignment">
           <div>
-            <a href="/user/register">Register Now</a>
+            <a href="/user/signup">Sign Up</a>
             <span class="register-split">|</span>
             <a href="/resetpassword">Forget Password</a>
           </div>         

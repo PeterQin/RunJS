@@ -4,7 +4,7 @@
 	<% include templates/head %>
 
 	<!-- Custom styles for this template -->
-	<link rel='stylesheet' href='/stylesheets/login.css' />
+	<link rel='stylesheet' href='/stylesheets/signinPage.css' />
 </head>
 <body>
 	<div>
@@ -15,7 +15,9 @@
 		<div class="container">
 		    <div>
 		    	<form class="form-signin" role="form">
-		    	  <h2 class="form-signin-heading">Please Login</h2>
+		    	  <div class="panel-heading-custom">
+		    	  	<h2 class="form-signin-heading">Sign In to Plan Analyser</h2>
+		    	  </div>
 		    	  <div class="input-group">
 		    	    <div id="input-group-email" class="input-group-addon">
 		    	      <span class="glyphicon glyphicon-user"/>
@@ -30,16 +32,16 @@
 		    	  </div>
 		    	  <div class="checkbox">
 		    	    <label>
-		    	      <input type="checkbox" value="remember-me"> Remember me</input>
+		    	      <input type="checkbox" value="remember-me">Remember me</input>
 		    	    </label>
 		    	  </div>
-		    	  <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+		    	  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
 		    	</form>
 		    </div>
 
 		    <div class="modal-footer modal-custom-alignment modal-footer-custom">
 		      <div>
-		        <a href="/user/register">Register Now</a>
+		        <a href="/user/signup">Sign Up</a>
 		        <span class="register-split">|</span>
 		        <a href="/resetpassword">Forget Password</a>
 		      </div>         

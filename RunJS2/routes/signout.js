@@ -3,9 +3,9 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	req.session.lastPage = req.originalUrl;
-	req.app.locals.user = req.session.user;
-  	next();
+	delete req.session.user;
+	req.app.locals.user = null;
+  	res.redirect('/');
 });
 
 module.exports = router;

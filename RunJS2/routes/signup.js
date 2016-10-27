@@ -4,24 +4,44 @@ var UserModel = require('../models/usermodel');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('login', { title: 'Login' });
+
+	res.render('signup', { title: 'signup' });
+  
 });
 
 router.post('/', function(req, res, next) {
 	var requestUser = req.body.user;
 	var email = requestUser.email;
+	var userName = requestUser.userName;
 	var password = requestUser.password;
 
 	if (!email) {
-		return res.send({fail: true, 
+		return res.send({success:false, 
 			element:'email',
 			message:'email cannot be empty'});
 	};
 
 	if (!password) {
-		return res.send({fail: true, 
+		return res.send({success:false, 
 			element:'password',
 			message:'password cannot be empty'});
+	};
+
+	var saveUser = function(){
+		var newUserModel = new UserModel(
+			{
+				email: email, 
+				userName: userName, 
+				password: password
+			});
+
+		newUserModel.save(function(err, aUser){
+		  if (err) {
+		    console.log(err);
+		  };
+		  res.redirect('/');
+
+		});
 	};
 
 	UserModel.findByEmail(email, function(err, aUser){
@@ -31,34 +51,17 @@ router.post('/', function(req, res, next) {
 		};
 
 		if (aUser) {
-			aUser.comparePassword(password, function(err, aIsMatched){
-				if (err) {
-				  console.log(err);
-				  return;
-				};
-				if (aIsMatched) {
-					req.session.user = aUser;
-					res.redirect(req.session.lastPage);
-				}
-				else{
-					return res.send(
-					{
-						fail: true, 
-						message: 'Password is incorrect'
-					});
-				}
-			})
+			res.send(
+			{
+				success: false, 
+				message: 'Fail to register Eamil ' + email + ', because it was registered before.'
+			});		
 		}
 		else{
-			return res.send(
-			{
-				fail: true, 
-				message: 'Email ' + email + ' is not register'
-			});
+			saveUser();
 		}
 
-	});
-
+	});  
 });
 
 module.exports = router;
