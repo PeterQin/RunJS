@@ -41,7 +41,8 @@ app.use(session({
   secret: 'Analyser Live 1',
   resave: false,
   saveUninitialized: false,
-  cookie: { maxAge: HOUR_IN_MILLION_SECOND},
+  //set the age to zero so that the session will expires and removed after browser closed
+  cookie: { maxAge: HOUR_IN_MILLION_SECOND}, 
   store: new mongoStore({
          url: MONGO_CONNECTION,
          collection: 'sessions'

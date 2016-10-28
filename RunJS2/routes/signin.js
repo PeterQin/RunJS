@@ -41,13 +41,10 @@ router.post('/', function(req, res, next) {
 				};
 				if (aIsMatched) {
 					req.session.user = aUser;
-					//make session expires after close browser.
-					if (!rememberMe) {
-						req.session.cookie.expires = false;
-					}
-					else{
-						req.session.cookie.maxAge = HOUR_IN_MILLION_SECOND;
-					}
+					
+					if (rememberMe) {
+						req.session.cookie.maxAge = 24 * HOUR_IN_MILLION_SECOND;
+					};
 					res.redirect('/');
 				}
 				else{
